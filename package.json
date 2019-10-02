@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/JhonPerez95/Learning_Nodejs/issues"
   },
-  "homepage": "https://github.com/JhonPerez95/Learning_Nodejs#readme"
+  "homepage": "https://github.com/JhonPerez95/Learning_Nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.19.2"
+  }
 }
