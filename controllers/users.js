@@ -1,12 +1,12 @@
 const User = require('../models/users');
 
-exports.getAllUser = (req, res) => {
+getAllUser = (req , res) => {
 	User.findAll({ attributes: ['name', 'lastName', 'age', 'email']})
 	.then(user => res.send(JSON.stringify(user)))
     .catch(err => res.send(err))
-    }
+}
 
-exports.getUserId = (req, res)=>{
+getUserId = (req, res)=>{
     const {id} = req.params;
     //console.log(id);
     User.findAll({
@@ -15,4 +15,9 @@ exports.getUserId = (req, res)=>{
     })
    .then(user => res.send(JSON.stringify(user)))
   .catch(err => res.send(err));
+}
+
+module.exports = {
+    getAllUser,
+    getUserId
 }
