@@ -1,14 +1,18 @@
 const Sequelize =  require('sequelize');
 const Sql = require('../db');
+const Category = require ('../models/categories');
 
 const User = Sql.define('users', {
-    iduser: { type: Sequelize.INTEGER, primaryKey: true },
+    id_user: { type: Sequelize.INTEGER, primaryKey: true },
     name: Sequelize.STRING,
     lastname: Sequelize.STRING,
     age: Sequelize.INTEGER,
 	email: Sequelize.STRING,
 	password: Sequelize.STRING
-    }, { timestamps: false }
-    );
+}, { timestamps: false });
 
-  module.exports = User;
+Sequelize.associate = (Category)=>{
+    User.hasMany(Category);
+};
+
+module.exports = User;

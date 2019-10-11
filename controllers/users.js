@@ -10,11 +10,11 @@ getUserId = (req, res)=>{
     const {id} = req.params;
     //console.log(id);
     User.findAll({
-        where:{iduser: id},
+        where:{id_user: id},
         attributes: ['name', 'lastName', 'age', 'email']
     })
    .then(user => res.send(JSON.stringify(user)))
-  .catch(err => res.send(err));
+   .catch(err => res.send(err));
 }
 
 module.exports = {
