@@ -1,7 +1,10 @@
-const userRoutes = require('./users');
+const ViewUser = require('./users');
+const ViewCategories = require("./categories")
+
 
 const routes = [
-  userRoutes,
+  ViewUser,
+  ViewCategories
 ]
 
 module.exports = routes;

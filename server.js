@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sql = require('./db.js');
-const Routes = require('./routes'); 
+const routes = require('./routes'); 
 const app = express();
 
 
@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Settings routes
 //app.use(require('./routes/users'));
-app.use(Routes);
+app.use(routes);
 
 // Strar Server
-app.listen(4000, ()=>{
-    console.log("server on port 4000");
+app.listen(3000, ()=>{
+    console.log("server on port 3000");
 });

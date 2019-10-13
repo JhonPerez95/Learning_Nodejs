@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
 const Sql = require("../db");
 const User = require("../models/users");
 
@@ -13,4 +13,4 @@ const Category = Sql.define('categories',{
 Category.associate = (User)=>{
     Category.belongsTo(User);
 };
-module.exports = Category;
+ module.exports = Category;
