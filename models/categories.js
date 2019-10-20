@@ -1,16 +1,30 @@
 const Sequelize = require('sequelize');
 const Sql = require("../db");
-const User = require("../models/users");
 
-const Category = Sql.define('categories',{
-    id_categories:{
-        type: Sequelize.INTEGER, primaryKey: true
+const Categories = Sql.define('categories', {
+    id_categories: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
-    name: Sequelize.STRING,
-    base_category: Sequelize.SMALLINT,
-}, { timestamps: false });
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+    base_category: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    }
+});
 
-Category.associate = (User)=>{
-    Category.belongsTo(User);
-};
- module.exports = Category;
+// Categories.associate = () => {
+//     Categories.belongsTo()
+// };
+
+module.exports = Categories;

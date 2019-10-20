@@ -1,16 +1,19 @@
-const Sequelize = require ('sequelize');
+const Sequelize = require('sequelize');
+const path = require('path');
+const fs = require('fs');
 
 const db = {
-    name: 'Learning_Nodejs',
-    user: 'root',
-    psw: 'root' ,
-    host: 'localhost',
-    dialect: 'mysql'
+  name: 'Learning_Nodejs',
+  user: 'root',
+  psw: 'root',
+  host: 'localhost',
+  dialect: 'mysql'
 };
 
-const sequelize =  new Sequelize(db.name, db.user, db.psw, {
-    host: db.host,
-    dialect: db.dialect
+const sequelize = new Sequelize(db.name, db.user, db.psw, {
+  host: db.host,
+  dialect: db.dialect
+
 });
 
 sequelize
@@ -22,4 +25,4 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-  module.exports = sequelize;
+module.exports = sequelize;
